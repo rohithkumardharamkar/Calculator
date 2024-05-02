@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+  
+    .con
+    {
+        
+        background-color: rgb(187, 54, 54);
+        border-radius: 7px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+       
+        border: 2px solid black;
+        margin: auto;
+        width: 380px;
+        height: 60vh;
+        background-color: rgb(169, 163, 163);
+    }
+    button{
+        height: 9vh;
+        width:90px
+    }
+    
+    
+    .k1,.k2,.k3,.k4,.k5
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    
+    #t1
+    {
+        position: relative;
+        left: 6px;        text-align: right;
+        width: 360px;
+        height: 6vh;
+        outline: none;
+        border: none;
+        padding: 5px 5px;
+        font-size: 25px;
+    }
+    button{
+        border-radius: 5px;
+        background-color: white;
+        color: black;
+        font-size: 20px;
+        font-weight:600;
+
+    }
+    .key
+    {
+       
+        display: flex;
+        height: 50vh;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .calc
+    {
+        padding-top: 100px;
+    }
+
+</style>
+
+<body>
+    <div class="calc">
+        <div class="con">
+            <div class="disp">
+                <input type="text" id="t1">
+            </div>
+            <div class="key">
+            <div class="k1">
+                <button onclick="fun('ac')" id="ac">AC</button>
+                <button onclick="fun('del')" id="del">DEL</button>
+                <button onclick="fun('%')">%</button>
+                <button onclick="fun('/')">/</button>
+            </div>
+            <div class="k2">
+                <button onclick="fun('7')">7</button>
+                <button onclick="fun('8')">8</button>
+                <button onclick="fun('9')">9</button>
+                <button onclick="fun('*')">x</button>
+                
+            </div>
+            <div class="k3">
+                <button onclick="fun('4')">4</button>
+                <button onclick="fun('5')">5</button>
+                <button onclick="fun('6')">6</button>
+                <button onclick="fun('-')">-</button>
+            </div>
+            <div class="k4">
+                <button onclick="fun('1')">1</button>
+                <button onclick="fun('2')">2</button>
+                <button onclick="fun('3')">3</button>
+                <button onclick="fun('+')">+</button>
+            </div>
+            <div class="k5">
+                <button onclick="fun('0')">0</button>
+                <button onclick="fun('00')">00</button>
+                <button onclick="fun('.')">.</button>
+                <button onclick="fun('=')">=</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let output=document.querySelector("input")
+        console.log(output)
+        let str=""
+        
+        function fun(e)
+        {
+           if(e=='del')
+           {
+            str=str.substring(0,st.length-1)
+            output.value=st
+           }
+           else if(e=="ac")
+           {
+            str=""
+            output.value=""
+
+           }
+           else if(e=="=")
+           {
+            a=eval(str)
+            output.value=a
+            str=" "+a
+           }
+           else
+           {
+            str=str+e
+            output.value=str
+
+           }
+        }
+    </script>
+
+</body>
+
+</html>
